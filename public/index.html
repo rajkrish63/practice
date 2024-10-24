@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper</title>
+</head>
+<body>
+    <h1>Web Scraper</h1>
+    <form id="scrapeForm">
+        <label for="url">Enter the URL:</label>
+        <input type="text" id="url" name="url" required>
+
+        <p>Select content types to scrape:</p>
+        <label><input type="checkbox" name="contentTypes" value="html"> HTML</label><br>
+        <label><input type="checkbox" name="contentTypes" value="css"> CSS</label><br>
+        <label><input type="checkbox" name="contentTypes" value="js"> JavaScript</label><br>
+        <label><input type="checkbox" name="contentTypes" value="img"> Images</label><br>
+        <label><input type="checkbox" name="contentTypes" value="video"> Videos</label><br>
+        <label><input type="checkbox" name="contentTypes" value="txt"> Text</label><br>
+
+        <button type="submit">Scrape</button>
+    </form>
+
+    <div id="results"></div>
+    <p id="responseMessage"></p>
+
+    <script>
+        document.getElementById('scrapeForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const url = document.getElementById('url').value;
+            const contentTypes = Array.from(document.querySelectorAll('input[name="contentTypes"]:checked'))
+                .map(checkbox => checkbox.value);
+
+            const response = await fetch('/scrape', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ url, contentTypes })
+            });
+
+            const result = await response.json();
+            document.getElementById('responseMessage').textContent = result.message || result.error;
+
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            if (result.results) {
+                if (result.results.html) {
+                    resultsDiv.innerHTML += `<h2>HTML Content</h2><textarea rows="10" cols="100">${result.results.html}</textarea>`;
+                    resultsDiv.innerHTML += `<a href="data:text/html;charset=utf-8,${encodeURIComponent(result.results.html)}" download="index.html">Download HTML</a><br>`;
+                }
+                if (result.results.text) {
+                    resultsDiv.innerHTML += `<h2>Text Content</h2><textarea rows="10" cols="100">${result.results.text}</textarea>`;
+                    resultsDiv.innerHTML += `<a href="data:text/plain;charset=utf-8,${encodeURIComponent(result.results.text)}" download="text.txt">Download Text</a><br>`;
+                }
+                if (result.results.css) {
+                    result.results.css.forEach((cssContent, index) => {
+                        resultsDiv.innerHTML += `<h2>CSS Content ${index + 1}</h2><textarea rows="10" cols="100">${cssContent}</textarea>`;
+                        resultsDiv.innerHTML += `<a href="data:text/css;charset=utf-8,${encodeURIComponent(cssContent)}" download="style${index + 1}.css">Download CSS ${index + 1}</a><br>`;
+                    });
+                }
+                if (result.results.js) {
+                    result.results.js.forEach((jsContent, index) => {
+                        resultsDiv.innerHTML += `<h2>JavaScript Content ${index + 1}</h2><textarea rows="10" cols="100">${jsContent}</textarea>`;
+                        resultsDiv.innerHTML += `<a href="data:text/javascript;charset=utf-8,${encodeURIComponent(jsContent)}" download="script${index + 1}.js">Download JS ${index + 1}</a><br>`;
+                    });
+                }
+                if (result.results.images) {
+                    resultsDiv.innerHTML += `<h2>Image Links</h2>`;
+                    result.results.images.forEach((imgSrc, index) => {
+                        resultsDiv.innerHTML += `<a href="${imgSrc}" target="_blank">Image ${index + 1}</a><br>`;
+                    });
+                }
+                if (result.results.videos) {
+                    resultsDiv.innerHTML += `<h2>Video Links</h2>`;
+                    result.results.videos.forEach((videoSrc, index) => {
+                        resultsDiv.innerHTML += `<a href="${videoSrc}" target="_blank">Video ${index + 1}</a><br>`;
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
