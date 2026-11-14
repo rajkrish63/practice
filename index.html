@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKANDX — The Future of Property Auctions</title>
+  <meta name="description" content="SKANDX — India's premium bank auction &amp; distressed property marketplace. Discover. Bid. Own." />
+
+  <!-- Fonts & Icons (CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Project styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#home" class="brand" data-page="home" aria-label="SKANDX home">
+        <span class="brand-mark"><i class="fa-solid fa-building-columns"></i></span>
+        <span class="brand-text">SKAN<span class="gold">DX</span><small>The Future of Property Auctions</small></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="#home" class="nav-link active" data-page="home">Home</a>
+        <a href="#properties" class="nav-link" data-page="properties">Properties</a>
+        <a href="#auctions" class="nav-link" data-page="auctions">Auctions</a>
+        <a href="#services" class="nav-link" data-page="services">Services</a>
+        <a href="#about" class="nav-link" data-page="about">About Us</a>
+        <a href="#dashboard" class="nav-link" data-page="dashboard">Dashboard</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+        <div class="notif-wrap">
+          <button class="icon-btn" id="notifToggle" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i><span class="notif-badge" id="notifBadge">3</span>
+          </button>
+          <div class="notif-dropdown" id="notifDropdown" hidden>
+            <div class="notif-head">
+              <strong>Notifications</strong>
+              <button id="notifMarkRead">Mark all read</button>
+            </div>
+            <div class="notif-list" id="notifList"></div>
+          </div>
+        </div>
+
+        <button class="btn btn-ghost btn-sm" id="loginBtn">Login</button>
+        <button class="btn btn-gold btn-sm" id="registerBtn">Register</button>
+
+        <button class="icon-btn hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav drawer -->
+    <nav class="mobile-nav" id="mobileNav" hidden aria-label="Mobile">
+      <a href="#home" class="nav-link active" data-page="home"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#properties" class="nav-link" data-page="properties"><i class="fa-solid fa-city"></i> Properties</a>
+      <a href="#auctions" class="nav-link" data-page="auctions"><i class="fa-solid fa-gavel"></i> Auctions</a>
+      <a href="#services" class="nav-link" data-page="services"><i class="fa-solid fa-scale-balanced"></i> Services</a>
+      <a href="#about" class="nav-link" data-page="about"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a href="#dashboard" class="nav-link" data-page="dashboard"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+      <div class="mobile-auth">
+        <button class="btn btn-ghost" id="loginBtnMobile">Login</button>
+        <button class="btn btn-gold" id="registerBtnMobile">Register</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" placeholder="Search by city, locality or property name…" autocomplete="off" />
+      <button class="btn btn-gold" id="searchGo">Search</button>
+      <button class="search-close" id="searchClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- =====================================================
+         PAGE 1 — HOME
+         ===================================================== -->
+    <section class="page active" id="page-home">
+
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <span class="hero-eyebrow"><i class="fa-solid fa-shield-halved"></i> India's Trusted Bank Auction Marketplace</span>
+            <h1 class="hero-title">Discover. Bid. <span class="gold">Own.</span></h1>
+            <p class="hero-sub">Bank Auction &amp; Distressed Properties with Complete Transparency.</p>
+
+            <ul class="hero-features">
+              <li><span class="hf-icon"><i class="fa-solid fa-building-columns"></i></span> Bank Auction Properties</li>
+              <li><span class="hf-icon"><i class="fa-solid fa-badge-check"></i></span> Verified Listings</li>
+              <li><span class="hf-icon"><i class="fa-solid fa-scale-balanced"></i></span> Legal Assistance</li>
+              <li><span class="hf-icon"><i class="fa-solid fa-headset"></i></span> End-to-End Support</li>
+            </ul>
+
+            <div class="hero-cta">
+              <button class="btn btn-gold btn-lg" data-page="properties">Explore Auctions <i class="fa-solid fa-arrow-right"></i></button>
+              <button class="btn btn-outline-light btn-lg" data-page="about">How It Works</button>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-divider" aria-hidden="true"></div>
+            <div class="hero-img-wrap">
+              <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1100&q=75" alt="Premium modern luxury house" onerror="imgFallback(this)" />
+              <div class="hero-float-card">
+                <span class="hfc-label">Next E-Auction Ends</span>
+                <strong class="hfc-count" data-countdown="ends" data-p="p2">—</strong>
+                <span class="hfc-prop">Luxury Villa · OMR Chennai</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEARCH PANEL -->
+      <div class="search-panel-wrap">
+        <div class="search-panel">
+          <div class="sp-tabs" id="spTabs">
+            <button class="sp-tab active" data-cat="all">All Properties</button>
+            <button class="sp-tab" data-cat="residential">Residential</button>
+            <button class="sp-tab" data-cat="commercial">Commercial</button>
+            <button class="sp-tab" data-cat="land">Land / Plot</button>
+            <button class="sp-tab" data-cat="industrial">Industrial</button>
+          </div>
+          <div class="sp-fields">
+            <div class="sp-field">
+              <label><i class="fa-solid fa-location-dot"></i> Location</label>
+              <input type="text" id="homeLocation" placeholder="City, locality or pincode" />
+            </div>
+            <div class="sp-field">
+              <label><i class="fa-solid fa-building"></i> Property Type</label>
+              <select id="homeType">
+                <option value="all">Any Type</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="land">Land / Plot</option>
+                <option value="industrial">Industrial</option>
+              </select>
+            </div>
+            <div class="sp-field">
+              <label><i class="fa-solid fa-indian-rupee-sign"></i> Budget Range</label>
+              <select id="homeBudget">
+                <option value="all">Any Budget</option>
+                <option value="0-5000000">Under ₹50 Lakhs</option>
+                <option value="5000000-10000000">₹50 L – ₹1 Cr</option>
+                <option value="10000000-20000000">₹1 Cr – ₹2 Cr</option>
+                <option value="20000000-999999999">Above ₹2 Cr</option>
+              </select>
+            </div>
+            <button class="btn btn-gold btn-lg" id="homeSearchBtn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATISTICS -->
+      <div class="stats-band">
+        <div class="container stats-grid">
+          <div class="stat"><strong class="gold">5,000+</strong><span>Properties Listed</span></div>
+          <div class="stat"><strong class="gold">1,200+</strong><span>Auctions Completed</span></div>
+          <div class="stat"><strong class="gold">15,000+</strong><span>Registered Bidders</span></div>
+          <div class="stat"><strong class="gold">20+</strong><span>Partner Banks</span></div>
+        </div>
+      </div>
+
+      <!-- FEATURED PROPERTIES -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Featured Auction <span class="gold">Properties</span></h2>
+              <p>Hand-picked bank-owned assets across India's prime locations.</p>
+            </div>
+            <button class="btn btn-outline" data-page="properties">View All Properties</button>
+          </div>
+          <div class="prop-grid" id="featuredGrid"></div>
+        </div>
+      </section>
+
+      <!-- TRUST STRIP -->
+      <section class="section trust-section">
+        <div class="container trust-grid">
+          <div class="trust-card">
+            <i class="fa-solid fa-file-circle-check"></i>
+            <h4>Complete Legal Check</h4>
+            <p>Every listing passes title search, encumbrance verification and due diligence.</p>
+          </div>
+          <div class="trust-card">
+            <i class="fa-solid fa-building-columns"></i>
+            <h4>Direct From Banks</h4>
+            <p>Official listings from 20+ partner banks including SBI, Canara and ICICI.</p>
+          </div>
+          <div class="trust-card">
+            <i class="fa-solid fa-gavel"></i>
+            <h4>Transparent Bidding</h4>
+            <p>Real-time e-auction engine with published reserve prices and bid history.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- =====================================================
+         PAGE 2 — PROPERTY LISTINGS
+         ===================================================== -->
+    <section class="page" id="page-properties">
+      <div class="page-head">
+        <div class="container">
+          <h1>Auction <span class="gold">Properties</span></h1>
+          <p>Explore bank auction and e-auction properties across India.</p>
+        </div>
+      </div>
+
+      <div class="container listing-layout">
+        <!-- Filters sidebar -->
+        <aside class="filters-sidebar" id="filtersSidebar">
+          <div class="filters-head">
+            <strong><i class="fa-solid fa-sliders"></i> Filters</strong>
+            <button class="icon-btn close-filters" id="closeFilters" aria-label="Close filters"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+
+          <div class="filter-group">
+            <label class="fg-title">Location</label>
+            <input type="text" id="propLocation" placeholder="Search city / locality…" />
+          </div>
+
+          <div class="filter-group">
+            <span class="fg-title">Property Type</span>
+            <label class="check"><input type="checkbox" class="type-check" value="residential" checked /> Residential</label>
+            <label class="check"><input type="checkbox" class="type-check" value="commercial" checked /> Commercial</label>
+            <label class="check"><input type="checkbox" class="type-check" value="land" checked /> Land / Plot</label>
+            <label class="check"><input type="checkbox" class="type-check" value="industrial" checked /> Industrial</label>
+          </div>
+
+          <div class="filter-group">
+            <span class="fg-title">Budget Range</span>
+            <input type="range" id="budgetRange" min="5000000" max="42000000" step="1000000" value="42000000" />
+            <div class="range-vals"><span>₹50 L</span><strong id="budgetLabel">Up to ₹4.20 Cr</strong></div>
+          </div>
+
+          <div class="filter-group">
+            <span class="fg-title">Bank</span>
+            <label class="check"><input type="checkbox" class="bank-check" value="Canara Bank" checked /> Canara Bank</label>
+            <label class="check"><input type="checkbox" class="bank-check" value="SBI" checked /> SBI</label>
+            <label class="check"><input type="checkbox" class="bank-check" value="ICICI Bank" checked /> ICICI Bank</label>
+            <label class="check"><input type="checkbox" class="bank-check" value="Axis Bank" checked /> Others</label>
+          </div>
+
+          <button class="btn btn-outline btn-block" id="resetFilters"><i class="fa-solid fa-rotate-left"></i> Reset Filters</button>
+        </aside>
+        <div class="filters-backdrop" id="filtersBackdrop" hidden></div>
+
+        <!-- Results -->
+        <div class="listing-main">
+          <div class="listing-toolbar">
+            <span id="resultsCount">Showing 14 properties</span>
+            <div class="toolbar-right">
+              <button class="btn btn-outline btn-sm filter-toggle" id="filterToggleBtn"><i class="fa-solid fa-sliders"></i> Filters</button>
+              <select id="sortSelect" aria-label="Sort">
+                <option value="featured">Sort: Featured</option>
+                <option value="ending">Ending Soon</option>
+                <option value="price-asc">Price: Low → High</option>
+                <option value="price-desc">Price: High → Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="prop-grid" id="propertiesGrid"></div>
+
+          <div class="empty-state" id="emptyState" hidden>
+            <i class="fa-solid fa-house-circle-exclamation"></i>
+            <h3>No properties found</h3>
+            <p>Try changing your location, budget or type filters to see more listings.</p>
+            <button class="btn btn-gold" id="emptyReset">Reset Filters</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 3 — PROPERTY DETAILS & BIDDING
+         ===================================================== -->
+    <section class="page" id="page-property">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="#home" data-page="home">Home</a>
+          <i class="fa-solid fa-angle-right"></i>
+          <a href="#properties" data-page="properties">Auction Properties</a>
+          <i class="fa-solid fa-angle-right"></i>
+          <span id="crumbCurrent">Property</span>
+        </nav>
+
+        <div class="detail-layout">
+          <!-- Left: gallery -->
+          <div class="detail-gallery">
+            <div class="gallery-main">
+              <img id="galleryMain" src="" alt="Property image" onerror="imgFallback(this)" />
+              <button class="gal-nav gal-prev" id="galleryPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="gal-nav gal-next" id="galleryNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+              <span class="badge badge-gold gal-badge" id="galleryBadge">E-AUCTION</span>
+              <div class="gal-actions">
+                <button class="icon-btn wish-btn" id="detailWishlist" data-id="" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                <button class="icon-btn" id="detailShare" aria-label="Share"><i class="fa-solid fa-share-nodes"></i></button>
+              </div>
+            </div>
+            <div class="gallery-thumbs" id="galleryThumbs"></div>
+          </div>
+
+          <!-- Right: info -->
+          <div class="detail-info">
+            <div class="detail-title-row">
+              <h1 id="detailTitle">—</h1>
+              <span class="badge" id="detailBadge">—</span>
+            </div>
+            <p class="detail-loc"><i class="fa-solid fa-location-dot"></i> <span id="detailLocation">—</span></p>
+
+            <div class="spec-grid">
+              <div class="spec"><i class="fa-solid fa-ruler-combined"></i><div><small>Built-up Area</small><strong id="detailArea">—</strong></div></div>
+              <div class="spec"><i class="fa-solid fa-draw-polygon"></i><div><small>Land Area</small><strong id="detailLandArea">—</strong></div></div>
+              <div class="spec"><i class="fa-solid fa-building"></i><div><small>Property Type</small><strong id="detailType">—</strong></div></div>
+            </div>
+
+            <div class="pricing-card">
+              <div class="pc-row">
+                <div><small>Reserve Price</small><strong id="dpReserve">—</strong></div>
+                <div><small>EMD (10%)</small><strong id="dpEmd">—</strong></div>
+                <div><small>Incremental Bid</small><strong id="dpIncrement">—</strong></div>
+              </div>
+              <div class="pc-divider"></div>
+              <small class="pc-label"><i class="fa-regular fa-clock"></i> Auction ends in</small>
+              <div class="countdown" id="countdown">
+                <div class="cd-unit"><strong class="cd-d">0</strong><span>Days</span></div>
+                <div class="cd-unit"><strong class="cd-h">0</strong><span>Hours</span></div>
+                <div class="cd-unit"><strong class="cd-m">0</strong><span>Mins</span></div>
+                <div class="cd-unit"><strong class="cd-s">0</strong><span>Secs</span></div>
+              </div>
+              <button class="btn btn-gold btn-lg btn-block" id="placeBidBtn"><i class="fa-solid fa-gavel"></i> Place Bid Now</button>
+              <p class="demo-note"><i class="fa-solid fa-circle-info"></i> Simulated demo — no real bids are submitted.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Highlights + bank -->
+        <div class="detail-below">
+          <div class="detail-card">
+            <h3><i class="fa-solid fa-star"></i> Key Highlights</h3>
+            <ul class="highlight-list">
+              <li><i class="fa-solid fa-circle-check"></i> Bank owned property</li>
+              <li><i class="fa-solid fa-circle-check"></i> Clear title and legal due diligence</li>
+              <li><i class="fa-solid fa-circle-check"></i> Physical possession available</li>
+              <li><i class="fa-solid fa-circle-check"></i> Prime residential location</li>
+              <li><i class="fa-solid fa-circle-check"></i> Good rental and investment value</li>
+            </ul>
+          </div>
+          <div class="detail-card">
+            <h3><i class="fa-solid fa-building-columns"></i> Bank Details</h3>
+            <table class="bank-table">
+              <tr><td>Bank</td><td id="bankName">—</td></tr>
+              <tr><td>Branch</td><td id="bankBranch">—</td></tr>
+              <tr><td>Asset Code</td><td id="bankAsset">—</td></tr>
+              <tr><td>Contact (Demo)</td><td id="bankContact">—</td></tr>
+              <tr><td>Relationship Officer</td><td>R. Meenakshi · +91 91760 11223</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="detail-desc">
+          <h3><i class="fa-solid fa-file-lines"></i> About This Property</h3>
+          <p id="detailDesc">—</p>
+        </div>
+
+        <div class="detail-actions">
+          <button class="btn btn-outline" id="downloadBrochure"><i class="fa-solid fa-file-arrow-down"></i> Download Brochure</button>
+          <button class="btn btn-outline" id="propertyDocs"><i class="fa-solid fa-folder-open"></i> Property Documents</button>
+          <button class="btn btn-outline" id="siteVisit"><i class="fa-solid fa-person-walking-luggage"></i> Site Visit / Visit</button>
+        </div>
+
+        <!-- Related -->
+        <div class="section-head">
+          <div>
+            <h2>Similar <span class="gold">Auctions</span></h2>
+            <p>Other live auctions you may want to track.</p>
+          </div>
+        </div>
+        <div class="prop-grid" id="relatedGrid"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 4 — AUCTIONS (live auction hub)
+         ===================================================== -->
+    <section class="page" id="page-auctions">
+      <div class="auctions-hero">
+        <div class="container">
+          <h1>Live <span class="gold">E-Auctions</span></h1>
+          <p>Bid in real time on bank-owned properties. Reserve prices are published and final sales are recorded transparently.</p>
+          <div class="auc-chips">
+            <span class="chip"><i class="fa-solid fa-circle dot-live"></i> Auctions Live Now</span>
+            <span class="chip"><i class="fa-solid fa-hourglass-half"></i> Ends Within 7 Days</span>
+            <span class="chip"><i class="fa-solid fa-building-columns"></i> 20+ Partner Banks</span>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container">
+          <div class="section-head">
+            <div><h2>All Live <span class="gold">Auctions</span></h2><p>Sorted by time remaining — act before the hammer falls.</p></div>
+            <button class="btn btn-outline" data-page="properties">Browse All Properties</button>
+          </div>
+          <div class="prop-grid" id="auctionsGrid"></div>
+        </div>
+      </div>
+      <div class="section process-section">
+        <div class="container">
+          <h2 class="center">How Bidding <span class="gold">Works</span></h2>
+          <div class="process-grid">
+            <div class="process-step"><span class="ps-num">01</span><i class="fa-solid fa-user-check"></i><h4>Register &amp; KYC</h4><p>Create your bidder account and complete KYC verification.</p></div>
+            <div class="process-step"><span class="ps-num">02</span><i class="fa-solid fa-indian-rupee-sign"></i><h4>Deposit EMD</h4><p>Pay the Earnest Money Deposit (10%) to unlock live bidding.</p></div>
+            <div class="process-step"><span class="ps-num">03</span><i class="fa-solid fa-gavel"></i><h4>Bid Live</h4><p>Place incremental bids in real time until the timer closes.</p></div>
+            <div class="process-step"><span class="ps-num">04</span><i class="fa-solid fa-key"></i><h4>Win &amp; Possess</h4><p>Complete payment and take possession with our legal team.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 5 — SERVICES
+         ===================================================== -->
+    <section class="page" id="page-services">
+      <div class="page-head">
+        <div class="container">
+          <h1>Our <span class="gold">Services</span></h1>
+          <p>Everything you need to bid with confidence — from discovery to possession.</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container services-grid">
+          <div class="service-card"><i class="fa-solid fa-scale-balanced"></i><h4>Legal Assistance</h4><p>Title verification, encumbrance certificates and court-case checks handled by empanelled advocates.</p></div>
+          <div class="service-card"><i class="fa-solid fa-magnifying-glass-dollar"></i><h4>Property Valuation</h4><p>Independent valuation reports so you bid with a realistic benchmark in mind.</p></div>
+          <div class="service-card"><i class="fa-solid fa-person-walking-luggage"></i><h4>Site Visits</h4><p>Scheduled physical inspections with our field officers before every auction.</p></div>
+          <div class="service-card"><i class="fa-solid fa-indian-rupee-sign"></i><h4>Auction Finance</h4><p>Tie-ups with leading NBFCs for bridge funding of EMD and final purchase.</p></div>
+          <div class="service-card"><i class="fa-solid fa-folder-open"></i><h4>Documentation</h4><p>End-to-end paperwork — sale certificates, registration and mutation support.</p></div>
+          <div class="service-card"><i class="fa-solid fa-gavel"></i><h4>Bidding Support</h4><p>Guided e-auction participation with strategy inputs from our auction desk.</p></div>
+        </div>
+      </div>
+      <div class="cta-band">
+        <div class="container cta-inner">
+          <div>
+            <h2>Ready to bid on your first property?</h2>
+            <p>Register today and get access to all live e-auctions.</p>
+          </div>
+          <button class="btn btn-gold btn-lg" id="ctaRegister">Create Free Account</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 6 — ABOUT
+         ===================================================== -->
+    <section class="page" id="page-about">
+      <div class="page-head">
+        <div class="container">
+          <h1>About <span class="gold">SKANDX</span></h1>
+          <p>The Future of Property Auctions.</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container about-grid">
+          <div class="about-visual">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=70" alt="Property professionals reviewing documents" onerror="imgFallback(this)" />
+          </div>
+          <div class="about-copy">
+            <h2>Built for <span class="gold">transparent</span> property acquisitions</h2>
+            <p>SKANDX is a digital-first auction marketplace that brings bank auction and distressed properties out of back-office listings and into a single, transparent platform. We partner with leading banks to publish verified listings with complete legal documentation.</p>
+            <p>From discovery and due diligence to EMD, live bidding and possession — our team supports you at every step.</p>
+            <ul class="about-points">
+              <li><i class="fa-solid fa-check"></i> 100% verified bank-owned inventory</li>
+              <li><i class="fa-solid fa-check"></i> Published reserve prices, zero hidden costs</li>
+              <li><i class="fa-solid fa-check"></i> Pan-India coverage across metro &amp; tier-2 cities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="stats-band navy">
+        <div class="container stats-grid">
+          <div class="stat"><strong class="gold">2019</strong><span>Founded</span></div>
+          <div class="stat"><strong class="gold">26</strong><span>Cities Covered</span></div>
+          <div class="stat"><strong class="gold">₹480 Cr</strong><span>Assets Transacted</span></div>
+          <div class="stat"><strong class="gold">98%</strong><span>Client Satisfaction</span></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container values-grid">
+          <div class="value-card"><i class="fa-solid fa-eye"></i><h4>Transparency First</h4><p>Every auction is documented end-to-end — no hidden reserves, no backroom deals.</p></div>
+          <div class="value-card"><i class="fa-solid fa-lock"></i><h4>Trust &amp; Security</h4><p>Bank-grade data security and verified legal processes on every asset.</p></div>
+          <div class="value-card"><i class="fa-solid fa-people-group"></i><h4>Customer Centric</h4><p>A dedicated relationship manager for every registered bidder.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 7 — DASHBOARD
+         ===================================================== -->
+    <section class="page" id="page-dashboard">
+      <div class="dash-layout">
+        <aside class="dash-sidebar" id="dashSidebar">
+          <div class="dash-brand">
+            <span class="brand-mark"><i class="fa-solid fa-building-columns"></i></span>
+            <span class="brand-text">SKAN<span class="gold">DX</span><small>Bidder Portal</small></span>
+          </div>
+          <nav class="dash-nav" id="dashNav">
+            <button class="dash-link active" data-view="overview"><i class="fa-solid fa-gauge-high"></i> Dashboard</button>
+            <button class="dash-link" data-view="bids"><i class="fa-solid fa-gavel"></i> My Bids</button>
+            <button class="dash-link" data-view="saved"><i class="fa-solid fa-heart"></i> Saved Properties</button>
+            <button class="dash-link" data-view="alerts"><i class="fa-regular fa-bell"></i> Alerts &amp; Notifications</button>
+            <button class="dash-link" data-view="profile"><i class="fa-regular fa-user"></i> My Profile</button>
+            <button class="dash-link" data-view="kyc"><i class="fa-solid fa-file-shield"></i> KYC &amp; Documents</button>
+            <button class="dash-link" data-view="support"><i class="fa-solid fa-headset"></i> Support</button>
+            <button class="dash-link logout" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+          </nav>
+          <div class="dash-help">
+            <i class="fa-solid fa-circle-question"></i>
+            <strong>Need help bidding?</strong>
+            <span>Call our auction desk</span>
+            <em>1800-202-SKANDX</em>
+          </div>
+        </aside>
+
+        <div class="dash-content">
+          <header class="dash-header">
+            <div>
+              <h2 id="dashTitle">Dashboard</h2>
+              <p class="dash-date" id="dashDate"></p>
+            </div>
+            <div class="dash-user">
+              <div class="dash-user-info">
+                <strong id="dashName">Welcome back, Udhaya Kumar R</strong>
+                <span id="dashMeta">Verified Bidder · Member since Jan 2024</span>
+              </div>
+              <div class="avatar" id="dashAvatar">UK</div>
+            </div>
+          </header>
+
+          <!-- OVERVIEW -->
+          <div class="dash-view active" id="dv-overview">
+            <div class="stat-cards">
+              <div class="s-card"><span class="s-icon gavel"><i class="fa-solid fa-gavel"></i></span><div><small>Active Bids</small><strong id="dActiveBids">0</strong></div></div>
+              <div class="s-card"><span class="s-icon heart"><i class="fa-solid fa-heart"></i></span><div><small>Watched Properties</small><strong id="dWatched">0</strong></div></div>
+              <div class="s-card"><span class="s-icon trophy"><i class="fa-solid fa-trophy"></i></span><div><small>Won Auctions</small><strong id="dWon">2</strong></div></div>
+              <div class="s-card"><span class="s-icon gear"><i class="fa-solid fa-gears"></i></span><div><small>In Process</small><strong id="dInProcess">1</strong></div></div>
+            </div>
+
+            <div class="dash-panel">
+              <div class="panel-head">
+                <h3>My Active Bids</h3>
+                <button class="btn btn-outline btn-sm" data-view-link="bids">View All</button>
+              </div>
+              <div class="table-scroll">
+                <table class="bids-table">
+                  <thead>
+                    <tr><th>Property</th><th>Location</th><th>Reserve</th><th>My Bid</th><th>Auction Ends</th><th>Status</th><th></th></tr>
+                  </thead>
+                  <tbody id="bidsTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- MY BIDS -->
+          <div class="dash-view" id="dv-bids">
+            <div class="dash-panel">
+              <div class="panel-head"><h3>Bid History</h3></div>
+              <div class="table-scroll">
+                <table class="bids-table">
+                  <thead>
+                    <tr><th>Property</th><th>Location</th><th>Reserve</th><th>My Bid</th><th>Auction Ends</th><th>Status</th><th></th></tr>
+                  </thead>
+                  <tbody id="bidsHistoryTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- SAVED -->
+          <div class="dash-view" id="dv-saved">
+            <div class="dash-panel">
+              <div class="panel-head"><h3>Saved Properties</h3><span class="badge" id="savedCount">0 saved</span></div>
+              <div class="prop-grid" id="savedGrid"></div>
+              <div class="empty-state small" id="savedEmpty">
+                <i class="fa-regular fa-heart"></i>
+                <p>No saved properties yet. Tap the heart icon on any listing to track it here.</p>
+                <button class="btn btn-gold btn-sm" data-page="properties">Browse Properties</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ALERTS -->
+          <div class="dash-view" id="dv-alerts">
+            <div class="dash-panel">
+              <div class="panel-head"><h3>Alerts &amp; Notifications</h3><button class="btn btn-outline btn-sm" id="dashMarkRead">Mark all read</button></div>
+              <div class="notif-list bordered" id="dashNotifList"></div>
+            </div>
+          </div>
+
+          <!-- PROFILE -->
+          <div class="dash-view" id="dv-profile">
+            <div class="dash-panel">
+              <div class="panel-head"><h3>My Profile</h3><span class="badge badge-gold">Verified Bidder</span></div>
+              <form class="profile-form" id="profileForm">
+                <div class="form-grid">
+                  <div class="form-field"><label>Full Name</label><input type="text" id="pfName" value="Udhaya Kumar R" /></div>
+                  <div class="form-field"><label>Email</label><input type="email" id="pfEmail" value="udhaya.kumar@skandx.demo" /></div>
+                  <div class="form-field"><label>Mobile</label><input type="text" id="pfPhone" value="+91 98407 22110" /></div>
+                  <div class="form-field"><label>City</label><input type="text" id="pfCity" value="Chennai" /></div>
+                </div>
+                <button class="btn btn-gold" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- KYC -->
+          <div class="dash-view" id="dv-kyc">
+            <div class="dash-panel">
+              <div class="panel-head"><h3>KYC &amp; Documents</h3></div>
+              <div class="kyc-grid">
+                <div class="kyc-card ok"><i class="fa-solid fa-id-card"></i><div><strong>PAN Card</strong><span>ABZPU1234K · Verified</span></div><span class="kyc-status ok">Verified</span></div>
+                <div class="kyc-card ok"><i class="fa-solid fa-passport"></i><div><strong>Aadhaar</strong><span>XXXX XXXX 4417 · Verified</span></div><span class="kyc-status ok">Verified</span></div>
+                <div class="kyc-card pending"><i class="fa-solid fa-building-columns"></i><div><strong>Bank Proof</strong><span>Cancelled cheque · Pending upload</span></div><span class="kyc-status pending">Pending</span></div>
+              </div>
+              <button class="btn btn-gold" id="kycUpload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Bank Proof (Demo)</button>
+            </div>
+          </div>
+
+          <!-- SUPPORT -->
+          <div class="dash-view" id="dv-support">
+            <div class="dash-panel">
+              <div class="panel-head"><h3>Support</h3></div>
+              <div class="faq-list" id="faqList">
+                <div class="faq-item"><button class="faq-q">How do I place my first bid? <i class="fa-solid fa-angle-down"></i></button><div class="faq-a"><p>Open any property, deposit the EMD, then use "Place Bid Now". Our auction desk will guide you live on your first auction.</p></div></div>
+                <div class="faq-item"><button class="faq-q">When is the EMD refunded? <i class="fa-solid fa-angle-down"></i></button><div class="faq-a"><p>If you do not win, the EMD is refunded to your source account within 7 working days of auction closure.</p></div></div>
+                <div class="faq-item"><button class="faq-q">Are properties physically verified? <i class="fa-solid fa-angle-down"></i></button><div class="faq-a"><p>Yes. Every listing undergoes field verification and legal due diligence before going live on SKANDX.</p></div></div>
+                <div class="faq-item"><button class="faq-q">Can I visit the property before bidding? <i class="fa-solid fa-angle-down"></i></button><div class="faq-a"><p>Absolutely. Use the "Site Visit" button on the property page and our officer will schedule an inspection.</p></div></div>
+              </div>
+              <div class="support-cta">
+                <i class="fa-solid fa-headset"></i>
+                <div><strong>Auction Desk</strong><span>1800-202-SKANDX · support@skandx.in</span></div>
+                <button class="btn btn-outline" id="raiseTicket">Raise Ticket (Demo)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="f-brand">
+        <a href="#home" class="brand" data-page="home">
+          <span class="brand-mark"><i class="fa-solid fa-building-columns"></i></span>
+          <span class="brand-text">SKAN<span class="gold">DX</span><small>The Future of Property Auctions</small></span>
+        </a>
+        <p>India's transparent marketplace for bank auction and distressed properties. Discover. Bid. Own.</p>
+        <div class="f-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Quick Links</h4>
+        <a href="#home" data-page="home">Home</a>
+        <a href="#properties" data-page="properties">Properties</a>
+        <a href="#auctions" data-page="auctions">Auctions</a>
+        <a href="#dashboard" data-page="dashboard">Dashboard</a>
+      </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <a href="#services" data-page="services">Legal Assistance</a>
+        <a href="#services" data-page="services">Property Valuation</a>
+        <a href="#services" data-page="services">Site Visits</a>
+        <a href="#services" data-page="services">Auction Finance</a>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <span><i class="fa-solid fa-location-dot"></i> 7th Floor, Tidel Park, Taramani, Chennai 600113</span>
+        <span><i class="fa-solid fa-phone"></i> 1800-202-SKANDX</span>
+        <span><i class="fa-solid fa-envelope"></i> support@skandx.in</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container fb-inner">
+        <span>© 2026 SKANDX Technologies Pvt. Ltd. All rights reserved.</span>
+        <span>Demo build — all data &amp; bidding are simulated.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODALS ================= -->
+
+  <!-- Login -->
+  <div class="modal-overlay" id="loginModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" data-close="loginModal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-head">
+        <span class="brand-mark"><i class="fa-solid fa-building-columns"></i></span>
+        <h3>Welcome Back</h3>
+        <p>Log in to your SKANDX bidder account.</p>
+      </div>
+      <form class="modal-form" id="loginForm">
+        <div class="form-field"><label>Email or Mobile</label><input type="text" id="loginId" placeholder="you@example.com" required /></div>
+        <div class="form-field"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••" required /></div>
+        <button class="btn btn-gold btn-block" type="submit">Login</button>
+        <p class="modal-alt">New to SKANDX? <a href="#" data-switch="registerModal">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register -->
+  <div class="modal-overlay" id="registerModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" data-close="registerModal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-head">
+        <span class="brand-mark"><i class="fa-solid fa-building-columns"></i></span>
+        <h3>Create Account</h3>
+        <p>Join 15,000+ bidders on India's premium auction platform.</p>
+      </div>
+      <form class="modal-form" id="registerForm">
+        <div class="form-field"><label>Full Name</label><input type="text" id="regName" placeholder="Your full name" required /></div>
+        <div class="form-field"><label>Email</label><input type="email" id="regEmail" placeholder="you@example.com" required /></div>
+        <div class="form-field"><label>Mobile</label><input type="text" id="regPhone" placeholder="+91 ..." required /></div>
+        <div class="form-field"><label>Password</label><input type="password" id="regPass" placeholder="Min 8 characters" minlength="8" required /></div>
+        <button class="btn btn-gold btn-block" type="submit">Create Free Account</button>
+        <p class="modal-alt">Already registered? <a href="#" data-switch="loginModal">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bid -->
+  <div class="modal-overlay" id="bidModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" data-close="bidModal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-head">
+        <span class="brand-mark"><i class="fa-solid fa-gavel"></i></span>
+        <h3>Place Your Bid</h3>
+        <p id="bidPropName">—</p>
+      </div>
+      <form class="modal-form" id="bidForm">
+        <div class="bid-current">
+          <small>Current Highest Bid</small>
+          <strong id="bidCurrent">—</strong>
+          <span id="bidIncrementNote">—</span>
+        </div>
+        <div class="form-field">
+          <label>Your Bid Amount (₹)</label>
+          <input type="number" id="bidInput" min="0" step="1000" placeholder="Enter amount" required />
+          <span class="bid-error" id="bidError" hidden>—</span>
+        </div>
+        <button class="btn btn-gold btn-block" type="submit"><i class="fa-solid fa-check"></i> Confirm Bid</button>
+        <p class="demo-note center"><i class="fa-solid fa-circle-info"></i> Simulated demo bidding — no real transaction occurs.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toasts -->
+  <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/properties.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

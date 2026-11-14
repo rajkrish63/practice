@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="560" viewBox="0 0 800 560">
+  <rect width="800" height="560" fill="#0A2342"/>
+  <rect x="0" y="430" width="800" height="130" fill="#071D35"/>
+  <g fill="none" stroke="#E8B849" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M400 150 L240 260 L240 400 L560 400 L560 260 Z"/>
+    <path d="M355 400 L355 320 L445 320 L445 400"/>
+  </g>
+  <text x="400" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#E8B849" letter-spacing="10">SKANDX</text>
+  <text x="400" y="512" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#9FB3C8" letter-spacing="4">PROPERTY AUCTIONS</text>
+</svg>
